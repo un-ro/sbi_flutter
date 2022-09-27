@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sbi_flutter/week_one/hello_world.dart';
 
 void main() => runApp(const MaterialThemeApp());
 
@@ -13,7 +12,8 @@ class MaterialThemeApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HelloPage(),
+      // Change to any Widget!
+      home: null,
     );
   }
 }
