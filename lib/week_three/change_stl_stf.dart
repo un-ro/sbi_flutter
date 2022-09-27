@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /*
   Week 3 Online Class
   27 September 2022
-  Topic: Stateless, Statefull Widget
+  Topic: Stateless, Stateful Widget
  */
 
 class HelloWidgetState extends StatefulWidget {
@@ -24,6 +24,8 @@ class _HelloWidgetStateState extends State<HelloWidgetState> {
 
   @override
   Widget build(BuildContext context) {
+    final List<Color> colors = [Colors.blue, Colors.green, Colors.red];
+
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -60,19 +62,18 @@ class _HelloWidgetStateState extends State<HelloWidgetState> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 ElevatedButton(
-                  onPressed: () => changeColor(Colors.blue),
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
+                  onPressed: () => changeColor(colors[0]),
+                  style: ElevatedButton.styleFrom(backgroundColor: colors[0]),
                   child: const Text("Blue"),
                 ),
                 ElevatedButton(
-                  onPressed: () => changeColor(Colors.green),
-                  style:
-                      ElevatedButton.styleFrom(backgroundColor: Colors.green),
+                  onPressed: () => changeColor(colors[1]),
+                  style: ElevatedButton.styleFrom(backgroundColor: colors[1]),
                   child: const Text("Green"),
                 ),
                 ElevatedButton(
-                  onPressed: () => changeColor(Colors.red),
-                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  onPressed: () => changeColor(colors[2]),
+                  style: ElevatedButton.styleFrom(backgroundColor: colors[2]),
                   child: const Text("Red"),
                 ),
               ],
