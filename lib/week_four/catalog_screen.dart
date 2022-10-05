@@ -20,6 +20,7 @@ class CatalogPage extends StatelessWidget {
           icon: const Icon(
             Icons.menu,
           ),
+          tooltip: 'Menu',
         ),
         title: const Text('Catalog'),
         actions: [
@@ -53,8 +54,9 @@ class CatalogPageCard extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
-            const Image(
-              image: NetworkImage('https://picsum.photos/250?image=9'),
+            Image.network(
+              'https://picsum.photos/250?image=9',
+              fit: BoxFit.cover,
             ),
             Container(
               padding: const EdgeInsets.all(10),
@@ -63,13 +65,16 @@ class CatalogPageCard extends StatelessWidget {
                 children: [
                   Text(
                     product.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                     ),
                   ),
                   Text(
                     "Rp. ${product.price}",
-                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                    style: const TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.end,
@@ -78,13 +83,16 @@ class CatalogPageCard extends StatelessWidget {
                         onPressed: () {},
                         icon: const Icon(Icons.favorite_outline),
                       ),
-                      TextButton.icon(
-                        onPressed: () {},
-                        icon: const Icon(Icons.shopping_cart_outlined),
-                        label: const Text("Add to Cart"),
-                        style: TextButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.tealAccent.shade700,
+                      ConstrainedBox(
+                        constraints: const BoxConstraints(minWidth: 200),
+                        child: TextButton.icon(
+                          onPressed: () {},
+                          icon: const Icon(Icons.shopping_cart_outlined),
+                          label: const Text("Add to Cart"),
+                          style: TextButton.styleFrom(
+                            foregroundColor: Colors.white,
+                            backgroundColor: Colors.tealAccent.shade700,
+                          ),
                         ),
                       ),
                     ],
